@@ -5,6 +5,7 @@
 
       <div class="field">
         <label>Length</label>
+        <!-- event binding -->
         <input class="input" (input)="onChangeLength($event.target.value)" />
       </div>
 
@@ -35,6 +36,7 @@
         </div>
       </div>
 
+      <!-- property binding -->
       <button
         [disabled]="
           !(length && (includeLetters || includeSymbols || includeNumbers))
@@ -45,7 +47,8 @@
         Generate!
       </button>
 
-      <div class="box">
+      <!-- Structural Directive: *ngIf -->
+      <div class="box" *ngIf="password">
         <label>Your Password</label>
         <input class="input" [value]="password" />
       </div>
